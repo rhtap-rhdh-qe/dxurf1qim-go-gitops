@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dxurf1qim-go-gitops
+  description: This is GitOps manifest for dxurf1qim-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=dxurf1qim-go
+    backstage.io/kubernetes-id: dxurf1qim-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: dxurf1qim-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:dxurf1qim-go
